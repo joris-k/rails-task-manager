@@ -1,0 +1,9 @@
+
+<h1 class="d-flex justify-content-center">My tasks</h1>
+<div class="align-middle">
+<% @tasks.each do |task| %>
+<li><%= task.completed ? '✔' : '✖' %> <%= link_to task.title , task_path(task) %><%= link_to '🗑️', delete_task_path(task), method: :delete, data: { confirm: "Are you sure?" }  %></li>
+<% end %>
+
+<%= link_to "+ Add a new Task", new_task_path %>
+</div>
